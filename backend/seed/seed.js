@@ -26,9 +26,9 @@ const run = async () => {
         `Database cleared successfully. ${result.deletedCount} auction items deleted.`
       );
     } else {
-      console.log("Invalid command.");
-      console.log("Use: node seed/seed.js seed");
-      console.log("Or:  node seed/seed.js delete");
+      console.log(`Invalid command: ${command}`);
+      console.log("Use: npm run seed");
+      console.log("Or:  npm run seed:delete");
       process.exitCode = 1;
     }
   } catch (error) {
