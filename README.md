@@ -1,74 +1,133 @@
-# Level 5 ADV Mission 5 Phase 1 Readme
+# Auction Backend API
 
-Introduction
+A backend application for managing and searching auction items, built with Node.js, Express and MongoDB.
 
-This project is an auction application backend built using Node.js, Express, and MongoDB.
+The project includes a REST API for searching auction items and a command-line utility for adding and removing sample data from a local MongoDB database.
 
-The project includes a command-line tool for adding sample auction items to the local MongoDB database and deleting the data when required.
+## Features
 
-It also includes an API that allows users to search auction items by keyword. The search checks both the item title and description.
+- Search auction items by keyword
+- Search across item titles and descriptions
+- Case-insensitive search
+- Store auction data in MongoDB
+- Seed sample auction data from the command line
+- Delete seeded data from the database
+- REST API built with Express
+
+## Technologies
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- dotenv
+- REST API
 
 ## Installation
 
-Clone the repository and install the required dependencies:
+### Prerequisites
 
+Make sure you have the following installed:
+
+- Node.js
+- MongoDB Community Server
+- MongoDB Compass
+
+### Clone the repository
+
+```bash
+git clone https://github.com/munishk686/auction-backend-api.git
+cd auction-backend-api
+```
+
+### Install dependencies
+
+```bash
 npm install
+```
 
-Create a .env file in the backend folder and add your local MongoDB connection:
+### Configure environment variables
 
+Create a `.env` file in the project root:
+
+```env
 MONGO_URI=mongodb://localhost:27017/auction_db
-
 PORT=3000
+```
 
-Start the API
-
-Start the Express server with:
+### Start the API
 
 ```bash
 npm run start
 ```
 
-The API will run on:
+The API will run locally on:
 
+```text
 http://localhost:3000
+```
 
-Seed the Database
+## Seed the Database
 
-To add the sample auction items to MongoDB:
+Add the sample auction items:
 
 ```bash
 npm run seed
 ```
 
-To delete the auction items from the database:
+Delete the auction items:
 
 ```bash
 npm run seed:delete
 ```
 
-Search Auction Items
+## Search Auction Items
 
 The API provides a keyword search endpoint:
 
+```text
 GET /api/auctions?search=bike
+```
 
 For example:
 
+```text
 http://localhost:3000/api/auctions?search=bike
+```
 
-The search is case-insensitive and checks both the title and description fields.
+The search is case-insensitive and checks both the auction item's title and description.
 
-## More Details
+## Project Structure
 
-Technologies Used:
+```text
+src/
+├── config/
+├── controllers/
+├── models/
+├── routes/
+└── server.js
 
-Node.js
-Express
-MongoDB
-Mongoose
-dotenv
+seed/
+├── data.js
+└── seed.js
+```
 
+## What I Worked On
 
+This project demonstrates my backend development experience with:
 
-Author:
+- Building REST API endpoints using Express
+- Creating MongoDB data models with Mongoose
+- Connecting a Node.js application to MongoDB
+- Creating a command-line data seeding utility
+- Managing environment variables with dotenv
+- Implementing keyword-based database searches
+- Organising backend code using controllers, routes and models
+
+## Project Context
+
+This project was developed as part of the Mission Ready Advanced Full Stack Developer programme.
+
+## Author
+
 Munish Kumar
